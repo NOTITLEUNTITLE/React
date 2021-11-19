@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+.index-title {
+  font-size: 4rem;
+  margin: 5% auto 180px auto;
+  text-align: center;
+}
+
+.card-area {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

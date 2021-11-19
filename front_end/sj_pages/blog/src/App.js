@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Consumption from './component/card_consumption';
+import Culture from './component/card_culture';
+import Living from './component/card_living';
+import Metro from './component/card_metro';
+import React, { useState, Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return (
+      <>
+        <div className="index-title"><a href='http://www.naver.com'>COVID-19 Data</a></div>
+        <section className="card-area">        
+          <Consumption></Consumption>
+          <Culture></Culture>
+          <Living></Living>
+          <Metro></Metro>
+        </section>
+      </>
+    );
+  }
 }
 
 export default App;
