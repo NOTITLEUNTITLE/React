@@ -8,6 +8,8 @@ import {
   HorizontalGridLines,
 } from "react-vis";
 
+
+
 const Chart = () => {
   const data = [
     { x: 0, y: 8 },

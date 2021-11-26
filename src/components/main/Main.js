@@ -1,25 +1,25 @@
 import "./Main.css";
-import hello from "../../assets/hello.svg";
-import Chart from "../charts/Chart";
 
 const Main = () => {
   return (
     <main>
       <div className="main__container">
+
+
         {/* <!-- MAIN TITLE STARTS HERE --> */}
 
-        <div className="main__title">
+        {/* <div className="main__title">
           <img src={hello} alt="hello" />
           <div className="main__greeting">
             <h1>Hello Codersbite</h1>
             <p>Welcome to your admin dashboard</p>
           </div>
-        </div>
+        </div> */}
 
         {/* <!-- MAIN TITLE ENDS HERE --> */}
 
         {/* <!-- MAIN CARDS STARTS HERE --> */}
-        <div className="main__cards">
+        {/* <div className="main__cards">
           <div className="card">
             <i
               className="fa fa-user-o fa-2x text-lightblue"
@@ -60,11 +60,14 @@ const Main = () => {
               <span className="font-bold text-title">645</span>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* <!-- MAIN CARDS ENDS HERE --> */}
+        
+        
+
 
         {/* <!-- CHARTS STARTS HERE --> */}
-        <div className="charts">
+        {/* <div className="charts">
           <div className="charts__left">
             <div className="charts__left__title">
               <div>
@@ -107,7 +110,7 @@ const Main = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* <!-- CHARTS ENDS HERE --> */}
       </div>
     </main>

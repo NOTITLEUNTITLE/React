@@ -9,6 +9,7 @@ main {
 }
 
 .main__title {
+  /* align-content: center; */
   display: flex;
   align-items: center;
 }
@@ -180,6 +181,15 @@ main {
   border-radius: 5px;
   font-size: 14px;
 }
+
+.contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+
+
 
 @media only screen and (max-width: 855px) {
   .main__cards {
