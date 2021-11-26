@@ -1,5 +1,4 @@
 import './chart.css'
-// import styles from "./chart.css";
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';  
