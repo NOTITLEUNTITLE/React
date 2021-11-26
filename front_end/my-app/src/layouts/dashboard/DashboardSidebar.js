@@ -59,10 +59,11 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       <Box sx={{ px: 2.5, py: 3 }}>
         <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
           <Logo />
+          <h2>지피지기</h2>
         </Box>
       </Box>
 
-      <Box sx={{ mb: 5, mx: 2.5 }}>
+      {/* <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline="none" component={RouterLink} to="#">
           <AccountStyle>
             <Avatar src={account.photoURL} alt="photoURL" />
@@ -76,13 +77,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
             </Box>
           </AccountStyle>
         </Link>
-      </Box>
+      </Box> */}
 
       <NavSection navConfig={sidebarConfig} />
 
       <Box sx={{ flexGrow: 1 }} />
 
-      <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
+      {/* <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
         <Stack
           alignItems="center"
           spacing={3}
@@ -118,7 +119,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
             Upgrade to Pro
           </Button>
         </Stack>
-      </Box>
+      </Box> */}
     </Scrollbar>
   );
 

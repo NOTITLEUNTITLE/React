@@ -42,9 +42,9 @@ export default function AppItemOrders() {
       <IconWrapperStyle>
         <Icon icon={windowsFilled} width={24} height={24} />
       </IconWrapperStyle>
-      <Typography variant="h3">{fShortenNumber(TOTAL)}</Typography>
+      <Typography variant="h3">소비</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Item Orders
+        온/오프라인 매출, 패션/잡화
       </Typography>
     </RootStyle>
   );

@@ -42,9 +42,9 @@ export default function AppWeeklySales() {
       <IconWrapperStyle>
         <Icon icon={androidFilled} width={24} height={24} />
       </IconWrapperStyle>
-      <Typography variant="h3">{fShortenNumber(TOTAL)}</Typography>
+      <Typography variant="h3">교통</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Weekly Sales
+        서울 지하철, 국내 공항 승객수
       </Typography>
     </RootStyle>
   );

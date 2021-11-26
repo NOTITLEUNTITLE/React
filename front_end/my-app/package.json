@@ -4,6 +4,7 @@
   "licence": "MIT",
   "version": "1.2.0",
   "private": false,
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -47,6 +48,7 @@
     "@mui/utils": "^5.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "apexcharts": "^3.28.3",
+    "axios": "^0.24.0",
     "change-case": "^4.1.2",
     "date-fns": "^2.24.0",
     "faker": "^5.5.3",

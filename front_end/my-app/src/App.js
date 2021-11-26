@@ -6,6 +6,7 @@ import GlobalStyles from './theme/globalStyles';
 // components
 import ScrollToTop from './components/ScrollToTop';
 import { BaseOptionChartStyle } from './components/charts/BaseOptionChart';
+import Flask from './components/Flask';
 
 // ----------------------------------------------------------------------
 
@@ -16,6 +17,7 @@ export default function App() {
       <GlobalStyles />
       <BaseOptionChartStyle />
       <Router />
+      <Flask />
     </ThemeConfig>
   );
 }

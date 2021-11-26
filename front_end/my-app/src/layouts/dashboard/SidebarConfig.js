@@ -13,40 +13,65 @@ const getIcon = (name) => <Icon icon={name} width={22} height={22} />;
 
 const sidebarConfig = [
   {
-    title: 'dashboard',
-    path: '/dashboard/app',
+    title: '홈',
+    path: '/dashboard/home',
     icon: getIcon(pieChart2Fill)
   },
   {
-    title: 'user',
-    path: '/dashboard/user',
+    title: '교통',
+    path: '/dashboard/transportation',
+    icon: getIcon(pieChart2Fill)
+  },
+  {
+    title: '문화',
+    path: '/dashboard/culture',
     icon: getIcon(peopleFill)
   },
   {
-    title: 'product',
-    path: '/dashboard/products',
+    title: '소비',
+    path: '/dashboard/consumption',
     icon: getIcon(shoppingBagFill)
   },
   {
-    title: 'blog',
-    path: '/dashboard/blog',
+    title: '생활',
+    path: '/dashboard/living',
     icon: getIcon(fileTextFill)
-  },
-  {
-    title: 'login',
-    path: '/login',
-    icon: getIcon(lockFill)
-  },
-  {
-    title: 'register',
-    path: '/register',
-    icon: getIcon(personAddFill)
-  },
-  {
-    title: 'Not found',
-    path: '/404',
-    icon: getIcon(alertTriangleFill)
   }
+  // {
+  //   title: 'dashboard',
+  //   path: '/dashboard/app',
+  //   icon: getIcon(pieChart2Fill)
+  // },
+  // {
+  //   title: 'user',
+  //   path: '/dashboard/user',
+  //   icon: getIcon(peopleFill)
+  // },
+  // {
+  //   title: 'product',
+  //   path: '/dashboard/products',
+  //   icon: getIcon(shoppingBagFill)
+  // },
+  // {
+  //   title: 'blog',
+  //   path: '/dashboard/blog',
+  //   icon: getIcon(fileTextFill)
+  // },
+  // {
+  //   title: 'login',
+  //   path: '/login',
+  //   icon: getIcon(lockFill)
+  // },
+  // {
+  //   title: 'register',
+  //   path: '/register',
+  //   icon: getIcon(personAddFill)
+  // },
+  // {
+  //   title: 'Not found',
+  //   path: '/404',
+  //   icon: getIcon(alertTriangleFill)
+  // }
 ];
 
 export default sidebarConfig;

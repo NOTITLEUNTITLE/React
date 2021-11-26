@@ -19,7 +19,7 @@ import {
 
 // ----------------------------------------------------------------------
 
-export default function DashboardApp() {
+export default function Home() {
   return (
     <Page title="Dashboard | Minimal-UI">
       <Container maxWidth="xl">
