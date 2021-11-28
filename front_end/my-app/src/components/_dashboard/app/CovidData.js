@@ -19,7 +19,7 @@ export default function CovidData() {
       {
         name: '국내 누적 확진자',
         type: 'area',
-        data: 1
+        data: [1]
       }
     ]
   });
@@ -30,7 +30,7 @@ export default function CovidData() {
       {
         name: '월별 격리자',
         type: 'area',
-        data: 1
+        data: [1]
       }
     ]
   });
@@ -41,7 +41,7 @@ export default function CovidData() {
       {
         name: '월별 사망자',
         type: 'area',
-        data: 1
+        data: [1]
       }
     ]
   });
@@ -125,12 +125,8 @@ export default function CovidData() {
   // const CHART_DATA1 = [confirmedData.datasets[0]];
   // const CHART_DATA2 = [quarantinedData.datasets[0]];
   // const CHART_DATA3 = [deathData.datasets[0]];
-  const CHART_DATA = [
-    confirmedData.datasets[0],
-    quarantinedData.datasets[0],
-    deathData.datasets[0]
-  ];
-  const CHART_DATA1 = [confirmedData.datasets[0]];
+  const CHART_DATA = [confirmedData.datasets[0], quarantinedData.datasets[0]];
+  const CHART_DATA1 = [deathData.datasets[0], deathData.datasets[0]];
 
   const chartOptions = merge(BaseOptionChart(), {
     stroke: { width: [0, 2, 3] },
@@ -151,6 +147,13 @@ export default function CovidData() {
       }
     }
   });
+  useEffect(() => {
+    const fetchEvents1 = async () => {
+      const res = await axios.get('http://15.164.225.133:5000/metro');
+      console.log('metro res', res);
+    };
+    fetchEvents1();
+  });
   console.log('chart_data', CHART_DATA);
 
   return (
@@ -158,7 +161,7 @@ export default function CovidData() {
       <CardHeader title="국내 코로나 정보" subheader="국내 코로나 관련 정보입니다." />
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
         <ReactApexChart type="line" series={CHART_DATA} options={chartOptions} height={364} />
-        {/* <ReactApexChart type="line" series={CHART_DATA1} options={chartOptions} height={364} /> */}
+        <ReactApexChart type="line" series={CHART_DATA1} options={chartOptions} height={364} />
         {/* <ReactApexChart type="line" series={CHART_DATA2} options={chartOptions} height={364} />
         <ReactApexChart type="line" series={CHART_DATA3} options={chartOptions} height={364} /> */}
       </Box>

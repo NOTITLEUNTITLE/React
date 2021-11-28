@@ -4,7 +4,7 @@ const Flask = () => {
   const [data, setData] = useState([{}]);
 
   useEffect(() => {
-    fetch('/members')
+    fetch('/')
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -12,14 +12,14 @@ const Flask = () => {
       });
   }, []);
 
-  const flasklist = data.map((item, index) => console.log(item.MembersCount));
+  const flasklist = data.map((item, index) => console.log(item));
 
   return (
     <div className="flask">
-      {data.map((item, index) => (
+      {/* {data.map((item, index) => (
         <p>{item.사람숫자}</p>
       ))}
-      ;
+      ; */}
     </div>
   );
 };

@@ -4,7 +4,7 @@
   "licence": "MIT",
   "version": "1.2.0",
   "private": false,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://15.164.225.133:5000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -50,6 +50,7 @@
     "apexcharts": "^3.28.3",
     "axios": "^0.24.0",
     "change-case": "^4.1.2",
+    "cors": "^2.8.5",
     "date-fns": "^2.24.0",
     "faker": "^5.5.3",
     "formik": "^2.2.9",
