@@ -16,6 +16,7 @@ import {
   AppCurrentSubject,
   AppConversionRates
 } from '../components/_dashboard/app';
+import CovidData from '../components/_dashboard/app/CovidData';
 
 // ----------------------------------------------------------------------
 
@@ -44,7 +45,11 @@ export default function Home() {
             <AppWebsiteVisits />
           </Grid> */}
 
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={8}>
+            <CovidData />
+          </Grid>
+
+          {/* <Grid item xs={12} md={6} lg={4}>
             <AppCurrentVisits />
           </Grid>
 
@@ -54,13 +59,13 @@ export default function Home() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentSubject />
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12} md={6} lg={8}>
             <AppNewsUpdate />
           </Grid>
 
-          <Grid item xs={12} md={6} lg={4}>
+          {/* <Grid item xs={12} md={6} lg={4}>
             <AppOrderTimeline />
           </Grid>
 
@@ -70,7 +75,7 @@ export default function Home() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppTasks />
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </Page>

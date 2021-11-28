@@ -19,7 +19,6 @@ import {
   AppCurrentSubject,
   AppConversionRates
 } from '../components/_dashboard/app';
-import CovidData from '../components/_dashboard/app/CovidData';
 
 // ----------------------------------------------------------------------
 
@@ -59,10 +58,6 @@ export default function DashboardApp() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppWebsiteVisits />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <CovidData />
           </Grid>
 
           {/* <Grid item xs={12} md={6} lg={4}>

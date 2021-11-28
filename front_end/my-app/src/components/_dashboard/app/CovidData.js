@@ -49,6 +49,7 @@ export default function CovidData() {
   useEffect(() => {
     const fetchEvents = async () => {
       const res = await axios.get('https://api.covid19api.com/total/dayone/country/kr');
+      console.log('res', res);
       makeData(res.data);
     };
     const makeData = (items) => {
@@ -81,6 +82,7 @@ export default function CovidData() {
         // console.log(cur,year,month,date)
         return acc;
       }, []);
+      console.log('arr', arr);
 
       const labels = arr.map((a) => `${a.month + 1}월`);
 
@@ -120,14 +122,22 @@ export default function CovidData() {
     fetchEvents();
   }, []);
 
-  const CHART_DATA = [confirmedData.datasets, quarantinedData.datasets, deathData.datasets];
+  // const CHART_DATA1 = [confirmedData.datasets[0]];
+  // const CHART_DATA2 = [quarantinedData.datasets[0]];
+  // const CHART_DATA3 = [deathData.datasets[0]];
+  const CHART_DATA = [
+    confirmedData.datasets[0],
+    quarantinedData.datasets[0],
+    deathData.datasets[0]
+  ];
+  const CHART_DATA1 = [confirmedData.datasets[0]];
 
   const chartOptions = merge(BaseOptionChart(), {
     stroke: { width: [0, 2, 3] },
     plotOptions: { bar: { columnWidth: '11%', borderRadius: 4 } },
     fill: { type: 'gradient' },
     labels: confirmedData.labels,
-    xaxis: { type: 'String' },
+    xaxis: { type: 'string' },
     tooltip: {
       shared: true,
       intersect: false,
@@ -141,15 +151,16 @@ export default function CovidData() {
       }
     }
   });
-  console.log(CHART_DATA[0][0]);
-  console.log(confirmedData.datasets[0]);
-  console.log(confirmedData.labels);
+  console.log('chart_data', CHART_DATA);
 
   return (
     <Card>
-      <CardHeader title="국내 코로나 19 확진자" subheader="(+43%) than last year" />
+      <CardHeader title="국내 코로나 정보" subheader="국내 코로나 관련 정보입니다." />
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
         <ReactApexChart type="line" series={CHART_DATA} options={chartOptions} height={364} />
+        {/* <ReactApexChart type="line" series={CHART_DATA1} options={chartOptions} height={364} /> */}
+        {/* <ReactApexChart type="line" series={CHART_DATA2} options={chartOptions} height={364} />
+        <ReactApexChart type="line" series={CHART_DATA3} options={chartOptions} height={364} /> */}
       </Box>
     </Card>
   );
