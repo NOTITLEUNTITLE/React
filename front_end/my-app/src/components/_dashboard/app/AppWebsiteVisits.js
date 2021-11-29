@@ -31,7 +31,7 @@ export default function AppWebsiteVisits() {
   // useEffect(() => {
   //   axios.get('/members').then((res) => console.log(res));
   // });
-
+  
   const chartOptions = merge(BaseOptionChart(), {
     stroke: { width: [0, 2, 3] },
     plotOptions: { bar: { columnWidth: '11%', borderRadius: 4 } },
@@ -63,7 +63,7 @@ export default function AppWebsiteVisits() {
       }
     }
   });
-  console.log('original', CHART_DATA);
+  // console.log('original', CHART_DATA);
 
   return (
     <Card>

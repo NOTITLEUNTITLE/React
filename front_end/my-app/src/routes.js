@@ -16,6 +16,8 @@ import ChartCulture from './pages/ChartCulture';
 import ChartConsumption from './pages/ChartConsumption';
 import ChartLiving from './pages/ChartLiving';
 
+
+
 // ----------------------------------------------------------------------
 
 export default function Router() {
