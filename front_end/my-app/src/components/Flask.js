@@ -8,7 +8,7 @@ const Flask = () => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data);
+        console.log('app.py metro data', data);
       });
   }, []);
 
