@@ -7,7 +7,7 @@ import Columns from "react-columns";
 import Form from "react-bootstrap/Form";
 import NumberFormat from "react-number-format";
 // import "react-toggle/style.css";
-import {Link, Routes, Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './chart.css'
 import { borderRadius } from "@mui/system";
 import Graph from "./Graph";
@@ -58,13 +58,12 @@ function Home() {
         <Card.Img variant="top" src={data.countryInfo.flag} />
         <Card.Body>
           <Card.Title>{data.country}</Card.Title>
-          <Card.Text>누적 확진자 {data.cases}</Card.Text>
-          <Card.Text>누적 사망자 {data.deaths}</Card.Text>
-          <Card.Text>누적 회복자 {data.recovered}</Card.Text>
           <Card.Text>신규 확진자 {data.todayCases}</Card.Text>
+          <Card.Text>신규 완치자 {data.todayRecovered}</Card.Text>
           <Card.Text>신규 사망자 {data.todayDeaths}</Card.Text>
-          <Card.Text>코로나 치료자 {data.active}</Card.Text>
-          <Card.Text>위중증 치료자 {data.critical}</Card.Text>
+          <Card.Text>위중증 환자 {data.critical}</Card.Text>
+          <Card.Text>누적 사망자 {data.deaths}</Card.Text>
+          <Card.Text>누적 확진자 {data.cases}</Card.Text>
         </Card.Body>
       </Card>
     );
@@ -104,15 +103,12 @@ function Home() {
             COVID-19인데 왜 21까지....?
           </h2>
           <br />
-          <Link to="/coronagraph">
+          <Link to="/dashboard/coronagraph">
             <button
               type="button"
               className="button"
             >코로나 보러 갈래?</button>
           </Link>
-          <Routes>
-            <Route path="/coronagraph" component={Graph} />
-          </Routes>
           {/* <div style={{ textAlign: "center" }}>
             <Toggle
               defaultChecked={false}
