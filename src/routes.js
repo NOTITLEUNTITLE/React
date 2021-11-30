@@ -36,7 +36,7 @@ export default function Router() {
         { path: 'culture', element: <ChartCulture /> },
         { path: 'consumption', element: <ChartConsumption /> },
         { path: 'living', element: <ChartLiving /> },
-        { path: 'coronagraph', element: <Graph /> }
+        { path: 'coronagraph', element: <Graph /> },
       ]
     },
     {
