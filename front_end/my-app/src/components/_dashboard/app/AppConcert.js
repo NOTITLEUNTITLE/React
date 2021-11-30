@@ -14,22 +14,25 @@ const AppConcert = () => {
     axios
       .get("http://15.164.225.133:5000/concert")
       .then(res => {
-        console.log(res)
-        for(const dataobj of res.data){
-          y1.push(parseInt(dataobj.perform_num));
-          y2.push(parseInt(dataobj.opening_num));
-          y3.push(parseInt(dataobj.showing_num));
-          y4.push(parseInt(dataobj.sales));
-          y5.push(parseInt(dataobj.book_num));
-          x.push(parseInt(dataobj.date_mon));
+        if(res.status === 200){
+          console.log("success data")
+          for(const dataobj of res.data){
+            y1.push((dataobj.perform_num));
+            y2.push((dataobj.opening_num));
+            y3.push((dataobj.showing_num));
+            y4.push((dataobj.sales));
+            y5.push((dataobj.book_num));
+            x.push(Number(dataobj.date_mon));
+          }
+        }else {
+          console.log("no data")
         }
       })
       .catch(err => {
         console.log(err)
       });
-    // console.log(x,y1,y2,y3)
+    console.log("x,y",x,y1,y2,y3,y4,y5)
     
-
   }
 
   
@@ -50,10 +53,7 @@ const AppConcert = () => {
     subtitle:{
       text:"전국 공연 데이터 통계"
     },
-    // labels: x,
     xaxis: {
-      // tickPlacement:'on',
-      // type: 'datetime',
       categories: x,
       title: {
         text: "Month",
@@ -90,14 +90,14 @@ const AppConcert = () => {
       name: 'showing_num',
       data: y3
     },
-    {
-      name: 'sales',
-      data: y4
-    },
-    {
-      name: 'book_num',
-      data: y5
-    },
+    // {
+    //   name: 'sales',
+    //   data: y4
+    // },
+    // {
+    //   name: 'book_num',
+    //   data: y5
+    // },
   ])
 
 

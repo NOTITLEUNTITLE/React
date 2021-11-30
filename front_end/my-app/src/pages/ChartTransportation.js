@@ -21,18 +21,8 @@ export default function DashboardApp() {
           <Typography variant="h4" gutterBottom>
             교통
           </Typography>
-          
-          {/* <Button
-            variant="contained"
-            component={RouterLink}
-            to="#"
-            startIcon={<Icon icon={plusFill} />}
-          >
-            분석
-          </Button> */}
-          
         </Stack>
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
           <AppMetro />
         </Grid>
         <Grid>

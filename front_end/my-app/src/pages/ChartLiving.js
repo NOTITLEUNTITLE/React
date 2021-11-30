@@ -18,7 +18,7 @@ export default function DashboardApp() {
             생활
           </Typography>
         </Stack>
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
           <AppLiving />
         </Grid>
         <Grid>

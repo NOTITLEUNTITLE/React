@@ -22,8 +22,8 @@ const AppSeoulbus = () => {
         for(const dataobj of res.data){
           var temp = dataobj.get_on;
           var temp1 = dataobj.get_off;
-          y.push(parseInt(temp - temp1));
-          x.push(parseInt(dataobj.date_day));
+          y.push(Number(temp - temp1));
+          x.push(Number(dataobj.date_day));
         }
         
       })
@@ -80,8 +80,9 @@ const AppSeoulbus = () => {
     }
   })
   const [series, setseries] = useState([{
-    name: '일일 지하철 탑승객',
-    data: y
+    name: '일일 버스 탑승객',
+    data: y,
+    color: "#0c2925",
   }])
 
 

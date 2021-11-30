@@ -23,20 +23,17 @@ export default function DashboardApp() {
             소비
           </Typography>
         </Stack>
-        {/* <Box sx={{ pb: 5 }}>
-          <Typography variant="h4">Hi, Welcome back</Typography>
-        </Box> */}
-        <Grid container spacing={3}>
-          {/* <Grid item xs={12} sm={6} md={3}>
-            <AppConsume />
-          </Grid> */}
+        {/* <Grid container spacing={3}> */}
           <Grid>
             <AppClothes />
           </Grid>
-        </Grid>
-        <Grid>
-          <AnalysisBtn />
-        </Grid>
+          <Grid>
+            <AppConsume />
+          </Grid>
+          <Grid>
+            <AnalysisBtn />
+          </Grid>
+        {/* </Grid> */}
       </Container>
     </Page>
   );

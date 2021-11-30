@@ -23,7 +23,7 @@ const AppMetro = () => {
           var temp = dataobj.get_on;
           var temp1 = dataobj.get_off;
           y.push(parseInt(temp - temp1));
-          x.push(parseInt(dataobj.date_day));
+          x.push(Number(dataobj.date_day));
         }
         
       })

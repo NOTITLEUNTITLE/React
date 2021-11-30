@@ -18,18 +18,16 @@ export default function DashboardApp() {
             문화
           </Typography>
         </Stack>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} lg={8}>
-              <AppMovie />
-          </Grid>
-          <Grid item xs={12} md={6} lg={8}>
-              <AppConcert />
-          </Grid>
-          <Grid item xs={12} md={6} lg={8}>
-            <AnalysisBtn />
-          </Grid>
-        </Grid>
         
+        <Grid>
+          <AppMovie />
+        </Grid>
+        <Grid>
+          <AppConcert />
+        </Grid>
+        <Grid>
+          <AnalysisBtn />
+        </Grid>
       </Container>
     </Page>
   );
