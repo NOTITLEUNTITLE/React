@@ -1,39 +1,44 @@
 import React, {useState,useEffect} from 'react';
 import Chart from 'react-apexcharts';
 import axios from 'axios';
+import s from './loading.css'
+import { merge } from 'lodash';
+import ReactApexChart from 'react-apexcharts';
+// material
+import { Card, CardHeader, Box } from '@mui/material';
+//
+import { BaseOptionChart } from '../../charts';
+import { truncate } from 'lodash-es';
 
-const AppConcert = () => {
-  let y1 = [];
-  let y2 = [];
-  let y3 = [];
-  let y4 = [];
-  let y5 = [];
+const AppSeoulbus = () => {
+  let y = [];
   let x = [];
-
+  
   const chart = () => {
     axios
-      .get("http://15.164.225.133:5000/concert")
+      .get("http://15.164.225.133:5000/seoulbus")
       .then(res => {
         console.log(res)
         for(const dataobj of res.data){
-          y1.push(parseInt(dataobj.perform_num));
-          y2.push(parseInt(dataobj.opening_num));
-          y3.push(parseInt(dataobj.showing_num));
-          y4.push(parseInt(dataobj.sales));
-          y5.push(parseInt(dataobj.book_num));
-          x.push(parseInt(dataobj.date_mon));
+          var temp = dataobj.get_on;
+          var temp1 = dataobj.get_off;
+          y.push(parseInt(temp - temp1));
+          x.push(parseInt(dataobj.date_day));
         }
+        
       })
       .catch(err => {
         console.log(err)
       });
-    // console.log(x,y1,y2,y3)
+    console.log(x,y)
+    
     
 
   }
 
   
   useEffect(() => {
+  
     chart();
   }, []);
 
@@ -42,13 +47,13 @@ const AppConcert = () => {
       id: 'apex chart'
     },
     title:{
-      text: "Concert data",
+      text: "Bus data",
       style:{
         fontSize:30
       }
     },
     subtitle:{
-      text:"전국 공연 데이터 통계"
+      text:"서울시 버스 데이터 통계"
     },
     // labels: x,
     xaxis: {
@@ -56,7 +61,7 @@ const AppConcert = () => {
       // type: 'datetime',
       categories: x,
       title: {
-        text: "Month",
+        text: "Day",
         style:{
           color: '#0f0'
         }
@@ -74,41 +79,21 @@ const AppConcert = () => {
       }
     }
   })
-
-
-
-  const [series, setseries] = useState([
-    {
-      name: 'perform_num',
-      data: y1
-    },
-    {
-      name: 'opening_num',
-      data: y2
-    },
-    {
-      name: 'showing_num',
-      data: y3
-    },
-    {
-      name: 'sales',
-      data: y4
-    },
-    {
-      name: 'book_num',
-      data: y5
-    },
-  ])
+  const [series, setseries] = useState([{
+    name: '일일 지하철 탑승객',
+    data: y
+  }])
 
 
   return (
     <div>
       <Chart options={options} series={series} type="line" width={1000} height={600} />
     </div>
+    
   );
 };
 
 
 
 
-export default AppConcert
+export default AppSeoulbus

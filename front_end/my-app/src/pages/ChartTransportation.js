@@ -7,7 +7,8 @@ import { Box, Grid, Container, Typography, Stack, Button } from '@mui/material';
 import Page from '../components/Page';
 import {
   AppMetro,
-  
+  AppApex,
+  AppSeoulbus,
 } from '../components/_dashboard/app';
 import AnalysisBtn from '../layouts/dashboard/AnalysisBtn';
 // ----------------------------------------------------------------------
@@ -32,7 +33,10 @@ export default function DashboardApp() {
           
         </Stack>
         <Grid item xs={12} md={6} lg={8}>
-            <AppMetro />
+          <AppMetro />
+        </Grid>
+        <Grid>
+          <AppSeoulbus />
         </Grid>
         <Grid>
           <AnalysisBtn />

@@ -13,7 +13,7 @@ const AppClothes = () => {
         console.log(res)
         for(const dataobj of res.data){
           y.push(parseInt(dataobj.total));
-          x.push(parseInt(dataobj.date_time));
+          x.push(Number(dataobj.date_time));
         }
       })
       .catch(err => {
@@ -33,15 +33,46 @@ const AppClothes = () => {
     chart: {
       id: 'apex chart'
     },
-    
+    // theme: {
+    //   mode:'dark'
+    // },
+    title:{
+      text: "Clothes data",
+      style:{
+        fontSize:30
+      }
+    },
+    subtitle:{
+      text:"전국 의류 데이터 통계"
+    },
+    // labels: x,
     xaxis: {
+      // tickPlacement:'on',
       // type: 'datetime',
-      categories: x
+      categories: x,
+      title: {
+        text: "Day",
+        style:{
+          color: '#0f0'
+        }
+      }
+    },
+    yaxis: {
+      style: {
+        colors:['#ff0']
+      },
+      title:{
+        text:"Amount",
+        style:{
+          color: '#0f0'
+        }
+      }
     }
   })
   const [series, setseries] = useState([{
-    name: '일별 지하철 탑승객_사람',
-    data: y
+    name: 'total',
+    data: y,
+    color: '#ff0000'
   }])
 
 

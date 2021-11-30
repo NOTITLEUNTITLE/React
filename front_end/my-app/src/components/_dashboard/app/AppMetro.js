@@ -13,14 +13,16 @@ import { truncate } from 'lodash-es';
 const AppMetro = () => {
   let y = [];
   let x = [];
-  const [loading, setLoading] = useState(true);
+  
   const chart = () => {
     axios
       .get("http://15.164.225.133:5000/metro")
       .then(res => {
         console.log(res)
         for(const dataobj of res.data){
-          y.push(parseInt(dataobj.get_on));
+          var temp = dataobj.get_on;
+          var temp1 = dataobj.get_off;
+          y.push(parseInt(temp - temp1));
           x.push(parseInt(dataobj.date_day));
         }
         
@@ -29,14 +31,14 @@ const AppMetro = () => {
         console.log(err)
       });
     console.log(x,y)
-    setLoading(false);
+    
     
 
   }
 
   
   useEffect(() => {
-    setLoading(true);
+  
     chart();
   }, []);
 
@@ -44,10 +46,37 @@ const AppMetro = () => {
     chart: {
       id: 'apex chart'
     },
-    
+    title:{
+      text: "Metro data",
+      style:{
+        fontSize:30
+      }
+    },
+    subtitle:{
+      text:"서울시 지하철 데이터 통계"
+    },
+    labels: x,
     xaxis: {
+      // tickPlacement:'on',
       // type: 'datetime',
-      categories: x
+      // categories: x,
+      title: {
+        text: "Day",
+        style:{
+          color: '#0f0'
+        }
+      }
+    },
+    yaxis: {
+      style: {
+        colors:['#ff0']
+      },
+      title:{
+        text:"Amount",
+        style:{
+          color: '#0f0'
+        }
+      }
     }
   })
   const [series, setseries] = useState([{

@@ -7,9 +7,10 @@ import Columns from "react-columns";
 import Form from "react-bootstrap/Form";
 import NumberFormat from "react-number-format";
 // import "react-toggle/style.css";
-import {Link} from 'react-router-dom';
+import {Link, Routes, Route} from 'react-router-dom';
 import './chart.css'
 import { borderRadius } from "@mui/system";
+import Graph from "./Graph";
 
 function Home() {
   const [latest, setLatest] = useState([]);
@@ -103,12 +104,15 @@ function Home() {
             COVID-19인데 왜 21까지....?
           </h2>
           <br />
-          <Link to="coronagraph">
+          <Link to="/coronagraph">
             <button
               type="button"
               className="button"
             >코로나 보러 갈래?</button>
           </Link>
+          <Routes>
+            <Route path="/coronagraph" component={Graph} />
+          </Routes>
           {/* <div style={{ textAlign: "center" }}>
             <Toggle
               defaultChecked={false}

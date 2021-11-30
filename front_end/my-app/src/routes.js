@@ -15,7 +15,7 @@ import ChartTransportation from './pages/ChartTransportation';
 import ChartCulture from './pages/ChartCulture';
 import ChartConsumption from './pages/ChartConsumption';
 import ChartLiving from './pages/ChartLiving';
-
+import Graph from './pages/Graph';
 
 
 // ----------------------------------------------------------------------
@@ -35,7 +35,8 @@ export default function Router() {
         { path: 'transportation', element: <ChartTransportation /> },
         { path: 'culture', element: <ChartCulture /> },
         { path: 'consumption', element: <ChartConsumption /> },
-        { path: 'living', element: <ChartLiving /> }
+        { path: 'living', element: <ChartLiving /> },
+        { path: 'coronagraph', element: <Graph /> }
       ]
     },
     {

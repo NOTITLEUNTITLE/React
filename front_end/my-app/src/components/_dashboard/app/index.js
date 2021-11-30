@@ -17,3 +17,5 @@ export { default as AppConsume } from './AppConsume';
 export { default as AppClothes } from './AppClothes';
 export { default as AppConcert } from './AppConcert';
 export { default as AppLiving } from './AppLiving';
+export { default as AppApex } from './AppApex';
+export { default as AppSeoulbus } from './AppSeoulbus';
