@@ -11,9 +11,16 @@ import {
   AppSeoulbus,
 } from '../components/_dashboard/app';
 import AnalysisBtn from '../layouts/dashboard/AnalysisBtn';
+import Bus from '../layouts/dashboard/Bus';
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
+  // setTimeout( () => {
+  //   window.dispatchEvent(new Event('resize'));
+  //   console.log("2.5초에 한번씩");
+  //   },
+  //   2500
+  // );
   return (
     <Page title="Dashboard | Minimal-UI">
       <Container maxWidth="xl">
@@ -21,13 +28,15 @@ export default function DashboardApp() {
           <Typography variant="h4" gutterBottom>
             교통
           </Typography>
+          
         </Stack>
+        <Bus />
         <Grid>
           <AppMetro />
         </Grid>
-        <Grid>
+        {/* <Grid>
           <AppSeoulbus />
-        </Grid>
+        </Grid> */}
         <Grid>
           <AnalysisBtn />
         </Grid>

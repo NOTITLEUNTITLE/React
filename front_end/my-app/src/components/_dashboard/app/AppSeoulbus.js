@@ -12,20 +12,24 @@ import { truncate } from 'lodash-es';
 
 const AppSeoulbus = () => {
   let y = [];
-  let x = [];
+  let x = [""];
   
   const chart = () => {
     axios
       .get("http://15.164.225.133:5000/seoulbus")
       .then(res => {
-        console.log(res)
-        for(const dataobj of res.data){
-          var temp = dataobj.get_on;
-          var temp1 = dataobj.get_off;
-          y.push(Number(temp - temp1));
-          x.push(Number(dataobj.date_day));
+        if(res.status === 200){
+          console.log("서울버스 데이터 가져왔다.")
+          for(const dataobj of res.data){
+            // var temp = dataobj.get_on;
+            // var temp1 = dataobj.get_off;
+            // y.push(Number(temp - temp1));
+            y.push((dataobj.get_on));
+            x.push((dataobj.date_day));
+          }
+        }else{
+          console.log("서울버스 데이터 못 가져왔다.")
         }
-        
       })
       .catch(err => {
         console.log(err)

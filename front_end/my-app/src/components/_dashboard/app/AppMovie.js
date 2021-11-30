@@ -9,35 +9,33 @@ const AppMovie = () => {
   let y4 = [];
   let y5 = [];
   let y6 = [];
-  let x = [];
-  let newx = [];
+  let x = [""];
+  
 
   const chart = () => {
     axios
       .get("http://15.164.225.133:5000/movie")
       .then(res => {
         if(res.status === 200){
-          console.log("res", res)
+          console.log("영화 데이터 가져왔다.")
           for(const dataobj of res.data){
-            y1.push(parseInt(dataobj.korea_sales));
-            y2.push(parseInt(dataobj.korea_audience_num));
-            y3.push(parseInt(dataobj.foreign_audience_num));
-            y4.push(parseInt(dataobj.foreign_sales));
-            y5.push(parseInt(dataobj.total_sales));
-            y6.push(parseInt(dataobj.total_audience));
-            x.push(parseInt(dataobj.date_day));
+            y1.push(Number(dataobj.korea_sales));
+            y2.push(Number(dataobj.korea_audience_num));
+            y3.push(Number(dataobj.foreign_audience_num));
+            y4.push(Number(dataobj.foreign_sales));
+            y5.push(Number(dataobj.total_sales));
+            y6.push(Number(dataobj.total_audience));
+            x.push((dataobj.date_day));
           }
         }else{
-          console.log("no data")
+          console.log("영화 데이터 못 가져왔다.")
         }
         
       })
       .catch(err => {
         console.log(err)
       });
-    console.log("x",x)
-    newx = x.map((e) => {return e.toString()})
-    console.log(newx)
+    
     
 
   }
@@ -60,10 +58,8 @@ const AppMovie = () => {
     subtitle:{
       text:"전국 영화 데이터 통계"
     },
-    // labels: x,
     xaxis: {
-      // tickPlacement:'on',
-      // type: 'datetime',
+      
       categories: x,
       title: {
         text: "Day",

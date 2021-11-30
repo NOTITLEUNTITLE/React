@@ -12,20 +12,24 @@ import { truncate } from 'lodash-es';
 
 const AppMetro = () => {
   let y = [];
-  let x = [];
+  let x = [""];
   
   const chart = () => {
     axios
       .get("http://15.164.225.133:5000/metro")
       .then(res => {
-        console.log(res)
-        for(const dataobj of res.data){
-          var temp = dataobj.get_on;
-          var temp1 = dataobj.get_off;
-          y.push(parseInt(temp - temp1));
-          x.push(Number(dataobj.date_day));
+        if(res.status === 200){
+          console.log("지하철 데이터 가져왔다.")
+          for(const dataobj of res.data){
+            // var temp = dataobj.get_on;
+            // var temp1 = dataobj.get_off;
+            // y.push(Number(temp - temp1));
+            y.push((dataobj.get_on));
+            x.push((dataobj.date_day));
+          }
+        }else{
+          console.log("지하철 데이터 못 가져왔다.")
         }
-        
       })
       .catch(err => {
         console.log(err)
@@ -53,13 +57,13 @@ const AppMetro = () => {
       }
     },
     subtitle:{
-      text:"서울시 지하철 데이터 통계"
+      text:"지하철 데이터 통계"
     },
-    labels: x,
+    // labels: x,
     xaxis: {
       // tickPlacement:'on',
       // type: 'datetime',
-      // categories: x,
+      categories: x,
       title: {
         text: "Day",
         style:{
@@ -80,8 +84,9 @@ const AppMetro = () => {
     }
   })
   const [series, setseries] = useState([{
-    name: '일일 지하철 탑승객',
-    data: y
+    name: '일일 버스 탑승객',
+    data: y,
+    color: "#0c2925",
   }])
 
 

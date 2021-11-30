@@ -7,6 +7,7 @@ import { Box, Grid, Container, Typography, Stack, Button } from '@mui/material';
 import Page from '../components/Page';
 import { AppMovie, AppConcert} from '../components/_dashboard/app';
 import AnalysisBtn from '../layouts/dashboard/AnalysisBtn';
+import Movie from '../layouts/dashboard/Movie';
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
@@ -18,10 +19,7 @@ export default function DashboardApp() {
             문화
           </Typography>
         </Stack>
-        
-        <Grid>
-          <AppMovie />
-        </Grid>
+        <Movie />
         <Grid>
           <AppConcert />
         </Grid>

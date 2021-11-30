@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const AppClothes = () => {
   let y = [];
-  let x = [];
+  let x = [""];
 
   const chart = () => {
     axios
@@ -12,14 +12,14 @@ const AppClothes = () => {
       .then(res => {
         console.log(res)
         for(const dataobj of res.data){
-          y.push(parseInt(dataobj.total));
-          x.push(Number(dataobj.date_time));
+          y.push(Number(dataobj.total));
+          x.push((dataobj.date_time));
         }
       })
       .catch(err => {
         console.log(err)
       });
-    console.log(x,y)
+    // console.log(x,y)
     
 
   }
@@ -45,11 +45,11 @@ const AppClothes = () => {
     subtitle:{
       text:"전국 의류 데이터 통계"
     },
-    // labels: x,
+    labels: x,
     xaxis: {
       // tickPlacement:'on',
       // type: 'datetime',
-      categories: x,
+      // categories: x,
       title: {
         text: "Day",
         style:{

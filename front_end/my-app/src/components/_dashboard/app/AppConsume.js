@@ -41,7 +41,7 @@ const AppConsume = () => {
   let y_ssm7 = [];
   let y_ssm8 = [];
 
-  let x = [];
+  let x = [""];
 
   const chart = () => {
     axios

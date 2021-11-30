@@ -16,7 +16,7 @@ const AppLiving = () => {
   let y10 = [];
   let y11 = [];
   let y12 = [];
-  let x = [];
+  let x = [""];
 
   const [loading, setLoading] = useState(true);
   const chart = () => {
@@ -38,7 +38,7 @@ const AppLiving = () => {
             y10.push(parseFloat(dataobj.home_appliance));
             y11.push(parseFloat(dataobj.living_health));
             y12.push(parseFloat(dataobj.sport_leisure));
-            x.push(Number(dataobj.date_day));
+            x.push((dataobj.date_day));
           }
         }else{
           console.log("no data");

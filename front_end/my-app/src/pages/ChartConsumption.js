@@ -9,6 +9,7 @@ import {
   AppConsume,
   AppApex,
   AppClothes,
+  AppMetro,
 } from '../components/_dashboard/app';
 import AnalysisBtn from '../layouts/dashboard/AnalysisBtn';
 
