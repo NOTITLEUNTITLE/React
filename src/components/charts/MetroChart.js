@@ -118,7 +118,7 @@ const MetroChart = () => {
     }
   })
   const [series, setseries] = useState([{
-    name: '일일 버스 탑승객',
+    name: '일일 지하철 탑승객',
     data: y,
     color: "#0c2925",
   }])
