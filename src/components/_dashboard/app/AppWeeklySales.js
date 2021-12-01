@@ -2,10 +2,11 @@ import { Icon } from '@iconify/react';
 import androidFilled from '@iconify/icons-ant-design/android-filled';
 // material
 import { alpha, styled } from '@mui/material/styles';
-import { Card, Typography } from '@mui/material';
+import { Card, Typography, Link, Button } from '@mui/material';
 // utils
 import { fShortenNumber } from '../../../utils/formatNumber';
 import { ReactComponent as Bus } from '../../../svg/bus-outline.svg';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -46,7 +47,7 @@ export default function AppWeeklySales() {
       </IconWrapperStyle>
       <Typography variant="h3">교통</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        서울 지하철, 국내 공항 승객수
+        서울 지하철
       </Typography>
     </RootStyle>
   );

@@ -5,7 +5,7 @@ import { alpha, styled } from '@mui/material/styles';
 import { Card, Typography } from '@mui/material';
 // utils
 import { fShortenNumber } from '../../../utils/formatNumber';
-import { ReactComponent as House } from '../../../svg/home-outline.svg';
+import { ReactComponent as Trending } from '../../../svg/trending-up-outline.svg';
 
 // ----------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ export default function AppBugReports() {
   return (
     <RootStyle>
       <IconWrapperStyle>
-        <House width={30} height={30} />
+        <Trending width={30} height={30} />
         {/* <Icon icon={bugFilled} width={24} height={24} /> */}
       </IconWrapperStyle>
       <Typography variant="h3">생활</Typography>
