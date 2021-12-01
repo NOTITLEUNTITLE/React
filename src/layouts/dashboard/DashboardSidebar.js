@@ -57,10 +57,10 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       }}
     >
       <Box sx={{ px: 2.5, py: 3 }}>
-        {/* <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}> */}
-        <Box component={RouterLink} to="/" >
-          {/* <Logo /> */}
-          {/* <button>지피지기</button> */}
+        <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
+        {/* <Box component={RouterLink} to="/" > */}
+          <Logo />
+          <Link to="/"><h2>지피지기</h2></Link>
         </Box>
       </Box>
 
