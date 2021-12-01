@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Button } from '@mui/material';
+import { Button, FormControl, InputLabel, NativeSelect } from '@mui/material';
 import CosmeticsBeautyAnalysis from '../../components/analysis/living/CosmeticsBeautyAnalysis';
 import DutyFreeShopAnalysis from '../../components/analysis/living/DutyFreeShopAnalysis';
 import FashionClothesAnalysis from '../../components/analysis/living/FashionClothesAnalysis';
@@ -12,9 +12,9 @@ import LivingHealthAnalysis from '../../components/analysis/living/LivingHealthA
 
 function CultureAnalysisBtn() {
     const [condition, setCondition] = useState(false);
-    const [pageCond, setPageCond] = useState("");
+    const [pageCond, setPageCond] = useState("0");
     const toggle = () => {
-        if (pageCond === '') {
+        if (pageCond === '0') {
             setCondition(false);
             alert('항목을 선택해주세요.');
         } else {setCondition(!condition);}
@@ -24,17 +24,17 @@ function CultureAnalysisBtn() {
     }, [condition])
     function showAnalysis(pageCond) {
         switch (pageCond) {
-            case '':
+            case '0':
                 setCondition(false)
                 return null;
-            case '가구 및 인테리어': return <FurnitureInteriorAnalysis />;
-            case '면세점': return <DutyFreeShopAnalysis />;
-            case '생활 및 건강': return <LivingHealthAnalysis />;
-            case '식품': return <FoodAnalysis />;
-            case '여가 및 생활편의': return <LeisureConvenienceAnalysis />;
-            case '패션 의류': return <FashionClothesAnalysis />;
-            case '패션 잡화': return <FashionStuffAnalysis />;
-            case '화장품 및 미용': return <CosmeticsBeautyAnalysis />;
+            case '1': return <FurnitureInteriorAnalysis />;
+            case '2': return <DutyFreeShopAnalysis />;
+            case '3': return <LivingHealthAnalysis />;
+            case '4': return <FoodAnalysis />;
+            case '5': return <LeisureConvenienceAnalysis />;
+            case '6': return <FashionClothesAnalysis />;
+            case '7': return <FashionStuffAnalysis />;
+            case '8': return <CosmeticsBeautyAnalysis />;
         }
     }
     const renderCondition = condition
@@ -56,22 +56,28 @@ function CultureAnalysisBtn() {
             >
                 {renderBtn}
             </Button>
-            <select
-                onChange={(e) => {
-                    const selectedPage = e.target.value;
-                    setPageCond(selectedPage);
-                }}
-            >
-                <option value="">없음</option>
-                <option value="가구 및 인테리어">가구 및 인테리어</option>
-                <option value="면세점">면세점</option>
-                <option value="생활 및 건강">생활 및 건강</option>
-                <option value="식품">식품</option>
-                <option value="여가 및 생활편의">여가 및 생활편의</option>
-                <option value="패션 의류">패션 의류</option>
-                <option value="패션 잡화">패션 잡화</option>
-                <option value="화장품 및 미용">화장품 및 미용</option>
-            </select>
+            <FormControl style={{marginLeft: '20px'}}>
+                <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                    분석 항목
+                </InputLabel>
+                <NativeSelect
+                    defaultValue={0}
+                    onChange={(e) => {
+                        const selectedPage = e.target.value;
+                        setPageCond(selectedPage);
+                    }}
+                >
+                    <option value={0}>없음</option>
+                    <option value={1}>가구 및 인테리어</option>
+                    <option value={2}>면세점</option>
+                    <option value={3}>생활 및 건강</option>
+                    <option value={4}>식품</option>
+                    <option value={5}>여가 및 생활편의</option>
+                    <option value={6}>패션 의류</option>
+                    <option value={7}>패션 잡화</option>
+                    <option value={8}>화장품 및 미용</option>
+                </NativeSelect>
+            </FormControl>
             {renderCondition}
         </>
     )

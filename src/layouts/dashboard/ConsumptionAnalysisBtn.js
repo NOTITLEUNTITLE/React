@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Button } from '@mui/material';
+import { Button, FormControl, InputLabel, NativeSelect } from '@mui/material';
 import ConvenienceProcessedFoodAnalysis from '../../components/analysis/consumption/ConvenienceProcessedFoodAnalysis';
 import ConvenienceSubtotalAnalysis from '../../components/analysis/consumption/ConvenienceSubtotalAnalysis';
 import ConvenienceTotalAnalysis from '../../components/analysis/consumption/ConvenienceTotalAnalysis';
@@ -12,9 +12,9 @@ import SupermarketAnalysis from '../../components/analysis/consumption/Supermark
 
 function CultureAnalysisBtn() {
     const [condition, setCondition] = useState(false);
-    const [pageCond, setPageCond] = useState("");
+    const [pageCond, setPageCond] = useState("0");
     const toggle = () => {
-        if (pageCond === '') {
+        if (pageCond === '0') {
             setCondition(false);
             alert('항목을 선택해주세요.');
         } else {setCondition(!condition);}
@@ -24,17 +24,17 @@ function CultureAnalysisBtn() {
     }, [condition])
     function showAnalysis(pageCond) {
         switch (pageCond) {
-            case '':
+            case '0':
                 setCondition(false)
                 return null;
-            case '대형 마트 가전문화': return <SupermarketAnalysis />;
-            case '백화점 가정용품': return <DepartmentStoreAnalysis />;
-            case '식품 음료 등 가공': return <ConvenienceProcessedFoodAnalysis />;
-            case '식품 소계': return <ConvenienceSubtotalAnalysis />;
-            case '편의점 총계': return <ConvenienceTotalAnalysis />;
-            case '일상용품': return <SSMDailyNecessitiesAnalysis />;
-            case '생활잡화': return <SSMLivingStuffAnalysis />;
-            case '비식품 소계': return <SSMNonfoodSubtotalAnalysis />;
+            case '1': return <SupermarketAnalysis />;
+            case '2': return <DepartmentStoreAnalysis />;
+            case '3': return <ConvenienceProcessedFoodAnalysis />;
+            case '4': return <ConvenienceSubtotalAnalysis />;
+            case '5': return <ConvenienceTotalAnalysis />;
+            case '6': return <SSMDailyNecessitiesAnalysis />;
+            case '7': return <SSMLivingStuffAnalysis />;
+            case '8': return <SSMNonfoodSubtotalAnalysis />;
         }
     }
     const renderCondition = condition
@@ -56,30 +56,36 @@ function CultureAnalysisBtn() {
             >
                 {renderBtn}
             </Button>
-            <select
-                onChange={(e) => {
-                    const selectedPage = e.target.value;
-                    setPageCond(selectedPage);
-                }}
-            >
-                <option value="">없음</option>
-                <optgroup label="대형 마트">
-                    <option value="대형 마트 가전문화">비식품 가전문화</option>
-                </optgroup>
-                <optgroup label="백화점">
-                    <option value="백화점 가정용품">비식품 가정용품</option>
-                </optgroup>
-                <optgroup label="편의점">
-                    <option value="식품 음료 등 가공">식품 음료 등 가공</option>
-                    <option value="식품 소계">식품 소계</option>
-                    <option value="편의점 총계">총계</option>
-                </optgroup>
-                <optgroup label="기업형 수퍼마켓">
-                    <option value="일상용품">비식품 일상용품</option>
-                    <option value="생활잡화">비식품 생활잡화</option>
-                    <option value="비식품 소계">비식품 소계</option>
-                </optgroup>
-            </select>
+            <FormControl style={{marginLeft: '20px'}}>
+                <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                    분석 항목
+                </InputLabel>
+                <NativeSelect
+                    defaultValue={0}
+                    onChange={(e) => {
+                        const selectedPage = e.target.value;
+                        setPageCond(selectedPage);
+                    }}
+                >
+                    <option value={0}>없음</option>
+                    <optgroup label="대형 마트">
+                        <option value={1}>비식품 가전문화</option>
+                    </optgroup>
+                    <optgroup label="백화점">
+                        <option value={2}>비식품 가정용품</option>
+                    </optgroup>
+                    <optgroup label="편의점">
+                        <option value={3}>식품 음료 등 가공</option>
+                        <option value={4}>식품 소계</option>
+                        <option value={5}>총계</option>
+                    </optgroup>
+                    <optgroup label="기업형 수퍼마켓">
+                        <option value={6}>비식품 일상용품</option>
+                        <option value={7}>비식품 생활잡화</option>
+                        <option value={8}>비식품 소계</option>
+                    </optgroup>
+                </NativeSelect>
+            </FormControl>
             {renderCondition}
         </>
     )

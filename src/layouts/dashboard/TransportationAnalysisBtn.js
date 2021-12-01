@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Button } from '@mui/material';
+import { Button, FormControl, InputLabel, NativeSelect } from '@mui/material';
 import SillimAnalysis from '../../components/analysis/transportation/SillimAnalysis';
 import GangnamAnalysis from '../../components/analysis/transportation/GangnamAnalysis';
 import SamsungAnalysis from '../../components/analysis/transportation/SamsungAnalysis';
@@ -10,9 +10,9 @@ import GetOffAnalysis from '../../components/analysis/transportation/GetOffAnaly
 
 function TransportationAnalysisBtn() {
     const [condition, setCondition] = useState(false);
-    const [pageCond, setPageCond] = useState("");
+    const [pageCond, setPageCond] = useState("0");
     const toggle = () => {
-        if (pageCond === '') {
+        if (pageCond === '0') {
             setCondition(false);
             alert('항목을 선택해주세요.');
         } else {setCondition(!condition);}
@@ -22,15 +22,15 @@ function TransportationAnalysisBtn() {
     }, [condition])
     function showAnalysis(pageCond) {
         switch (pageCond) {
-            case '':
+            case '0':
                 setCondition(false)
                 return null;
-            case '하차 인원': return <GetOffAnalysis />;
-            case '강남역': return <GangnamAnalysis />;
-            case '명동역': return <MyeongdongAnalysis />;
-            case '삼성역': return <SamsungAnalysis />;
-            case '신림역': return <SillimAnalysis />;
-            case '을지로입구역': return <EuljiroAnalysis />;
+            case '1': return <GetOffAnalysis />;
+            case '2': return <GangnamAnalysis />;
+            case '3': return <MyeongdongAnalysis />;
+            case '4': return <SamsungAnalysis />;
+            case '5': return <SillimAnalysis />;
+            case '6': return <EuljiroAnalysis />;
         }
     }
     const renderCondition = condition
@@ -52,20 +52,26 @@ function TransportationAnalysisBtn() {
             >
                 {renderBtn}
             </Button>
-            <select
-                onChange={(e) => {
-                    const selectedPage = e.target.value;
-                    setPageCond(selectedPage);
-                }}
-            >
-                <option value="">없음</option>
-                <option value="하차 인원">지하철 하차 인원</option>
-                <option value="강남역">강남역</option>
-                <option value="명동역">명동역</option>
-                <option value="삼성역">삼성(무역센터)역</option>
-                <option value="신림역">신림역</option>
-                <option value="을지로입구역">을지로입구역</option>
-            </select>
+            <FormControl style={{marginLeft: '20px'}}>
+                <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                    분석 항목
+                </InputLabel>
+                <NativeSelect
+                    defaultValue={0}
+                    onChange={(e) => {
+                        const selectedPage = e.target.value;
+                        setPageCond(selectedPage);
+                    }}
+                >
+                    <option value={0}>없음</option>
+                    <option value={1}>지하철 하차 인원</option>
+                    <option value={2}>강남역</option>
+                    <option value={3}>명동역</option>
+                    <option value={4}>삼성(무역센터)역</option>
+                    <option value={5}>신림역</option>
+                    <option value={6}>을지로입구역</option>
+                </NativeSelect>
+            </FormControl>
             {renderCondition}
         </>
     )
