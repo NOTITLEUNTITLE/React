@@ -1,83 +1,123 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import ReactApexChart from "react-apexcharts";
+import axios from 'axios';
+import Chart from 'react-apexcharts';
+
+
+
 
 function Graph() {
-  const series = [
-    {
-      name: "Cases",
-      data: [
-        555,
-        12038,
-        69030,
-        88369,
-        167466,
-        932638,
-        2055423,
-        3343777,
-        3845718,
-      ],
+  let x = [''];
+  let Deaths = [];
+  let y_confirmed = [];
+  let y = [];
+  let year = "";
+  let month = "";
+  let day = "";
+  const chart = () => {
+    axios
+      .get("https://api.covid19api.com/total/dayone/country/kr")
+      // .get("https://corona.lmao.ninja/v2/countries")
+      .then(res => {
+        if(res.status === 200){
+          console.log("코로나 데이터 가져왔다.")
+          console.log(res.data)
+          for(const dataobj of res.data){
+            year = ((dataobj.Date.substring(0,4)));
+            month = ((dataobj.Date.substring(5,7)));
+            day = ((dataobj.Date.substring(8,10)));
+            x.push((year+month+day));
+            Deaths.push(dataobj.Deaths);
+            y_confirmed.push(dataobj.Confirmed);
+          }
+          for(var i=1; i < x.length; i++){
+            // console.log("포문 진입")
+            y.push(y_confirmed[i]-y_confirmed[i-1]);
+          }
+        }else{
+          console.log("코로나 데이터 못 가져왔다.")
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      });
+    console.log("x,y",x,y)
+    
+    
+  }
+
+  useEffect(() => {
+    chart();  
+    
+  }, [])
+
+
+  const [options, setoptions] = useState({
+    chart: {
+      id: 'apex chart'
     },
-    {
-      name: "Recovered",
-      data: [28, 284, 9394, 42710, 76026, 191853, 501538, 1029651, 1255481],
+    title:{
+      text: "코로나 일일 확진자",
+      style:{
+        fontSize:30
+      }
     },
-    {
-      name: "Deaths",
-      data: [17, 259, 1666, 2996, 6472, 49675, 140658, 238619, 269567],
-    },
-  ];
-  const options = {
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: "smooth",
-    },
+    // subtitle:{
+    //   text:"코로나 일일 확진자"
+    // },
+    // labels: x,
     xaxis: {
-      type: "datetime",
-      categories: [
-        "1/22/20",
-        "2/1/20",
-        "2/15/20",
-        "3/1/20",
-        "3/15/20",
-        "4/1/20",
-        "4/15/20",
-        "5/1/20",
-        "5/7/20",
-      ],
+      // tickPlacement:'on',
+      // type: 'datetime',
+      categories: x,
+      title: {
+        text: "Day",
+        style:{
+          color: '#0f0'
+        }
+      }
     },
-    tooltip: {
-      x: {
-        format: "dd/MM/yy",
+    yaxis: {
+      style: {
+        colors:['#ff0']
       },
-    },
-  };
+      title:{
+        text:"Amount",
+        style:{
+          color: '#0f0'
+        }
+      }
+    }
+  })
+  const [series, setseries] = useState([{
+    name: '코로나 확진자',
+    data: y,
+    color: "#0c2925",
+    // type: 'column',
+  }])
+  const [series1, setseries1] = useState([{
+    name: '코로나 확진자',
+    data: Deaths,
+    color: "#0c2925",
+    // type: 'column',
+  }])
 
   return (
     <div
       style={{
         backgroundColor: "white",
-        textAlign: "center",
+        textAlign: "left",
       }}
     >
       <br />
-      <h2>COVID-19 Global Graphs</h2>
+      <h2>COVID-19 Korea Graphs</h2>
       <br />
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="area"
-        height={350}
-      />
-      <br />
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="bar"
-        height={350}
-      />
+      <Chart options={options} series={series} type="line" width={1000} height={600} />
+      <Chart options={options} series={series1} type="line" width={1000} height={600} />
     </div>
+    
+    
+    
   );
 }
 
