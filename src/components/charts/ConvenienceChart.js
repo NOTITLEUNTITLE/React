@@ -47,8 +47,46 @@ const ConvenienceChart = () => {
 
   const [options, setoptions] = useState({
     chart: {
-      id: 'apex chart'
+      id: 'apex chart',
+      zoom: {
+        autoScaleYaxis: true
+      }
     },
+    annotations: {
+      xaxis: [{
+        x: "200303",
+        x2: "210303",
+        borderColor: '#999',
+        yAxisIndex: 0,
+        fillColor: '#B3F7CA',
+        label: {
+          rotate: -45,
+          show: true,
+          text: '국내 첫 확진자',
+          style: {
+            color: "#fff",
+            background: '#775DD0',
+            fontSize: "16"
+          }
+        }
+      }]
+    },
+    // annotations: {
+    //   yaxis: [
+    //     {
+    //       y: 150,
+    //       borderColor: "#00E396",
+    //       label: {
+    //         borderColor: "#00E396",
+    //         style: {
+    //           color: "#fff",
+    //           background: "#00E396"
+    //         },
+    //         text: "Y Axis Annotation"
+    //       }
+    //     }
+    //   ],
+    // },
     title:{
       text: "Convenience data",
       style:{
@@ -56,17 +94,27 @@ const ConvenienceChart = () => {
       }
     },
     subtitle:{
-      text:"편의점 데이터 통계",
+      text:"전국 편의점 데이터 통계",
       margin: 40
     },
     xaxis: {
+      // {},
+      tickAmount: 10,
+      labels: {
+        show: true,
+        rotate: 0,
+        // formatter: (val) => formatDateTo(val), 
+      },
+      // labels: [1,2,3,4],
+      type: "category",
       categories: x,
       title: {
-        text: "Day",
+        text: "YYMM",
         style:{
-          color: '#0f0'
+          fontSize: '24',
+          color: '#000'
         }
-      }
+      }, 
     },
     yaxis: {
       style: {
@@ -75,7 +123,8 @@ const ConvenienceChart = () => {
       title:{
         text:"Amount",
         style:{
-          color: '#0f0'
+          fontSize: '24',
+          color: '#000'
         }
       }
     }
