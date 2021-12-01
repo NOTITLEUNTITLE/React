@@ -27,10 +27,10 @@ function CultureAnalysisBtn() {
             case '':
                 setCondition(false)
                 return null;
-            case '대형 마트': return <SupermarketAnalysis />;
-            case '백화점': return <DepartmentStoreAnalysis />;
-            case '가공 식품 및 음료': return <ConvenienceProcessedFoodAnalysis />;
-            case '편의점 소계': return <ConvenienceSubtotalAnalysis />;
+            case '대형 마트 가전문화': return <SupermarketAnalysis />;
+            case '백화점 가정용품': return <DepartmentStoreAnalysis />;
+            case '식품 음료 등 가공': return <ConvenienceProcessedFoodAnalysis />;
+            case '식품 소계': return <ConvenienceSubtotalAnalysis />;
             case '편의점 총계': return <ConvenienceTotalAnalysis />;
             case '일상용품': return <SSMDailyNecessitiesAnalysis />;
             case '생활잡화': return <SSMLivingStuffAnalysis />;
@@ -63,11 +63,15 @@ function CultureAnalysisBtn() {
                 }}
             >
                 <option value="">없음</option>
-                <option value="대형 마트">대형 마트</option>
-                <option value="백화점">백화점</option>
+                <optgroup label="대형 마트">
+                    <option value="대형 마트 가전문화">비식품 가전문화</option>
+                </optgroup>
+                <optgroup label="백화점">
+                    <option value="백화점 가정용품">비식품 가정용품</option>
+                </optgroup>
                 <optgroup label="편의점">
-                    <option value="가공 식품 및 음료">가공 식품 및 음료</option>
-                    <option value="편의점 소계">소계</option>
+                    <option value="식품 음료 등 가공">식품 음료 등 가공</option>
+                    <option value="식품 소계">식품 소계</option>
                     <option value="편의점 총계">총계</option>
                 </optgroup>
                 <optgroup label="기업형 수퍼마켓">

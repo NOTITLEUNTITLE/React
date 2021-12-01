@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, Box } from '@mui/material';
+import { Card, CardHeader, CardContent } from '@mui/material';
 import ConvenienceProcessedFoodTable from '../table/consumption/ConvenienceProcessedFoodTable';
 
 export default function ConvenienceProcessedFoodAnalysis() {
@@ -7,8 +7,8 @@ export default function ConvenienceProcessedFoodAnalysis() {
 
     return (
         <Card>
-            <CardHeader title="편의점 가공 식품 및 음료 데이터 분석 결과" subheader="거리두기 단계와 신규확진자 수가 편의점 식품 음료 등 가공 성장률에 미치는 영향을 분석하기 위해 다중회귀분석을 실시하였다." />
-            <Box sx={{ p: 3, pb: 1 }} dir="ltr">
+            <CardHeader title="편의점 식품 음료 등 가공 데이터 분석 결과" subheader="거리두기 단계와 신규확진자 수가 편의점 식품 음료 등 가공 성장률에 미치는 영향을 분석하기 위해 다중회귀분석을 실시하였다." />
+            <CardContent>
                 <CardHeader title="1. 다중회귀 분석 차트" />
                 <img src='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FU98fz%2FbtrmFoyPju7%2F3emTWPj6JaKWZpY614QOJK%2Fimg.png' alt='다중회귀' width='80%' height='auto' />
                 <br/>
@@ -16,7 +16,7 @@ export default function ConvenienceProcessedFoodAnalysis() {
                 <ConvenienceProcessedFoodTable />
                 <br/>
                 <CardHeader title="3. 다중회귀 분석 결과 설명" subheader={explanation} />
-            </Box>
+            </CardContent>
         </Card>
     )
 }

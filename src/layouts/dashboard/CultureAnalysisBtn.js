@@ -68,10 +68,10 @@ function CultureAnalysisBtn() {
                     <option value="예매수">예매수</option>
                 </optgroup>
                 <optgroup label="영화">
-                    <option value="국내 매출액">국내 매출액</option>
-                    <option value="국내 관객수">국내 관객수</option>
-                    <option value="해외 판매액">해외 판매액</option>
-                    <option value="해외 관객수">해외 관객수</option>
+                    <option value="국내 매출액">한국 영화 매출액</option>
+                    <option value="국내 관객수">한국 영화 관객수</option>
+                    <option value="해외 판매액">외국 영화 판매액</option>
+                    <option value="해외 관객수">외국 영화 관객수</option>
                     <option value="전체 매출액">전체 매출액</option>
                     <option value="전체 관객수">전체 관객수</option>
                 </optgroup>

@@ -1,14 +1,13 @@
 import React, { useState, useEffect} from 'react';
 import { Button, Tab } from '@mui/material';
 import Tabs from 'react-bootstrap/Tabs';
-import ClothesChart from '../../components/charts/ClothesChart';
 import MarketChart from '../../components/charts/MarketChart';
 import DepartmentChart from '../../components/charts/DepartmentChart';
 import ConvenienceChart from '../../components/charts/ConvenienceChart';
 import SSMChart from '../../components/charts/SSMChart';
 
 function ConsumptionChartBtn() {
-    const [key, setKey] = useState('clothes');
+    const [key, setKey] = useState('market');
   
     return (
       <Tabs
@@ -16,10 +15,6 @@ function ConsumptionChartBtn() {
         activeKey={key}
         onSelect={(k) => setKey(k)}
       >
-        <Tab eventKey="clothes" title="의류">
-          <br/>
-          <ClothesChart />
-        </Tab>
         <Tab eventKey="market" title="대형마트">
           <br/>
           <MarketChart />

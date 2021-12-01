@@ -7,7 +7,7 @@ export default function KoreaSalesAnalysis() {
 
     return (
         <Card>
-            <CardHeader title="한국 영화 매출액 데이터 분석 결과" subheader="거리두기 단계와 신규확진자 수가 영화 한국 영화 매출액에 미치는 영향을 분석하기 위해 다중회귀분석을 실시하였다." />
+            <CardHeader title="한국 영화 매출액 데이터 분석 결과" subheader="거리두기 단계와 신규확진자 수가 한국 영화 매출액에 미치는 영향을 분석하기 위해 다중회귀분석을 실시하였다." />
             <Box sx={{ p: 3, pb: 1 }} dir="ltr">
                 <CardHeader title="1. 다중회귀 분석 차트" />
                 <img src='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbGxe4%2FbtrmFoS6Fam%2FhjwB8S3gFLNeCjnZKODlVK%2Fimg.png' alt='다중회귀' width='80%' height='auto' />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, Box } from '@mui/material';
+import { Card, CardHeader, CardContent } from '@mui/material';
 import DepartmentStoreTable from '../table/consumption/DepartmentStoreTable';
 
 export default function DepartmentStoreAnalysis() {
@@ -8,15 +8,15 @@ export default function DepartmentStoreAnalysis() {
     return (
         <Card>
             <CardHeader title="백화점 비식품 가정용품 데이터 분석 결과" subheader="거리두기 단계와 신규확진자 수가 백화점 비식품 가정용품 성장률에 미치는 영향을 분석하기 위해 다중회귀분석을 실시하였다." />
-            <Box sx={{ p: 3, pb: 1 }} dir="ltr">
-                <CardHeader title="1. 다중회귀 분석 차트" />
+            <CardContent>
+            <CardHeader title="1. 다중회귀 분석 차트" />
                 <img src='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FeoQq9b%2FbtrmEb04ncJ%2F7SRWTXmqllKNQfEjKOkkj1%2Fimg.png' alt='다중회귀' width='80%' height='auto' />
                 <br/>
                 <CardHeader title="2. 다중회귀 분석 요약" />
                 <DepartmentStoreTable />
                 <br/>
                 <CardHeader title="3. 다중회귀 분석 결과 설명" subheader={explanation} />
-            </Box>
+            </CardContent>
         </Card>
     )
 }
