@@ -304,6 +304,8 @@ const ConcertChart = () => {
 
   return (
     <div>
+
+      
       <Chart options={options} series={series} type="line" width={1000} height={600} />
     </div>
   );
