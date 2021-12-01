@@ -109,7 +109,7 @@ const ConvenienceChart = () => {
       type: "category",
       categories: x,
       title: {
-        text: "YYMM",
+        text: "YYMMDD",
         style:{
           fontSize: '24',
           color: '#000'
