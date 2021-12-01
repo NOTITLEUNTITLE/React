@@ -9,7 +9,7 @@ import TransportationChartBtn from '../layouts/dashboard/TransportationChartBtn'
 
 export default function DashboardApp() {
   return (
-    <Page title="Dashboard | Minimal-UI">
+    <Page title="교통">
       <Container maxWidth="xl">
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
