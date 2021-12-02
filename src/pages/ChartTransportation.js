@@ -19,11 +19,13 @@ export default function DashboardApp() {
           <TransportationChartBtn />
         <Grid item xs={12} md={6} lg={8}>
         </Grid>
-        <Grid style={{textAlign:'right', marginRight:'10%'}}>
-          
+        <Grid item xs={12} md={6} lg={8} style={{textAlign:'right'}}>
+          <Typography gutterBottom>
+            출처: 서울열린데이터광장(<a href="https://data.seoul.go.kr/index.do" style={{textDecoration:'none'}}>https://data.seoul.go.kr/index.do</a>)
+          </Typography>
         </Grid>
-        <p className={s.source} >출처: 서울열린데이터광장
-        <a href="https://data.seoul.go.kr/index.do" className={s.source1}>https://data.seoul.go.kr/index.do</a></p>
+        {/* <p className={s.source} >출처: 서울열린데이터광장
+        <a href="https://data.seoul.go.kr/index.do" className={s.source1}>https://data.seoul.go.kr/index.do</a></p> */}
         <Grid item xs={12} md={6} lg={8}>
           <TransportationAnalysisBtn />
         </Grid>

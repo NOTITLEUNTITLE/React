@@ -167,7 +167,7 @@ const SSMChart = () => {
 
   return (
     <div>
-      <Chart options={options} series={series} type="line" width={1000} height={600} />
+      <Chart options={options} series={series} type="line" width={1400} height={900} />
     </div>
   );
 };
