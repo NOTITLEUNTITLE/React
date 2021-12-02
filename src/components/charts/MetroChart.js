@@ -47,8 +47,8 @@ const MetroChart = () => {
         borderColor: '#999',
         yAxisIndex: 0,
         fillColor: '#B3F7CA',
+        rotate: 90,
         label: {
-          rotate: -45,
           show: true,
           text: '국내 첫 확진자',
           style: {
@@ -57,7 +57,7 @@ const MetroChart = () => {
             fontSize: "16"
           }
         }
-      }]
+      }],
     },
     // annotations: {
     //   yaxis: [
@@ -105,6 +105,9 @@ const MetroChart = () => {
       }, 
     },
     yaxis: {
+      // tooltip: {
+      //   enabled: true
+      // },
       style: {
         colors:['#ff0']
       },
@@ -125,7 +128,7 @@ const MetroChart = () => {
 
   return (
     <div>
-      <Chart options={options} series={series} type="line" width={1000} height={600} />
+      <Chart options={options} series={series} type="line" width={1400} height={900} />
     </div>
     
   );

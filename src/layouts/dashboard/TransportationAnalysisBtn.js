@@ -7,7 +7,6 @@ import MyeongdongAnalysis from '../../components/analysis/transportation/Myeongd
 import EuljiroAnalysis from '../../components/analysis/transportation/EuljiroAnalysis';
 import GetOffAnalysis from '../../components/analysis/transportation/GetOffAnalysis';
 
-
 function TransportationAnalysisBtn() {
     const [condition, setCondition] = useState(false);
     const [pageCond, setPageCond] = useState("0");

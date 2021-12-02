@@ -6,7 +6,7 @@ import Page from '../components/Page';
 import TransportationAnalysisBtn from '../layouts/dashboard/TransportationAnalysisBtn';
 import TransportationChartBtn from '../layouts/dashboard/TransportationChartBtn';
 // ----------------------------------------------------------------------
-
+import s from "./Main.module.css";
 export default function DashboardApp() {
   return (
     <Page title="교통">
@@ -20,16 +20,17 @@ export default function DashboardApp() {
         <Grid item xs={12} md={6} lg={8}>
         </Grid>
         <Grid style={{textAlign:'right', marginRight:'10%'}}>
-          <Typography gutterBottom>
-            출처: 서울열린데이터광장(<a href="https://data.seoul.go.kr/index.do" style={{textDecoration:'none'}}>https://data.seoul.go.kr/index.do</a>)
-          </Typography>
+          
         </Grid>
+        <p className={s.source} >출처: 서울열린데이터광장
+        <a href="https://data.seoul.go.kr/index.do" className={s.source1}>https://data.seoul.go.kr/index.do</a></p>
         <Grid item xs={12} md={6} lg={8}>
           <TransportationAnalysisBtn />
         </Grid>
         <br/>
         <Grid item xs={12} md={6} lg={8}>
-          <Card>
+          
+          <Card sx={{width: 1400}}>
             <CardHeader title="교통 데이터 최종 분석 인사이트" subheader="교통 데이터 분석을 통해 도출한 인사이트입니다." />
             <br/>
             <CardContent>
