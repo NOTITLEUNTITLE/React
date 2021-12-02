@@ -10,12 +10,13 @@ export default function SillimAnalysis() {
             <CardHeader title="명동역 데이터 분석 결과" subheader="거리두기 단계와 신규확진자 수가 명동역 하차인원에 미치는 영향을 분석하기 위해 다중회귀분석을 실시하였다." />
             <Box sx={{ p: 3, pb: 1 }} dir="ltr">
                 <CardHeader title="1. 다중회귀 분석 차트" />
-                <img src='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbnGrq4%2FbtrmHD96rwd%2FK8PgKyrrNX5LIZlPkIKs41%2Fimg.png' alt='다중회귀' width='80%' height='auto' />
+                <img src='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FFWIkJ%2FbtrmNpqUAO1%2FCjU1WGxwQfBGRBFmm6NfL1%2Fimg.png' alt='다중회귀' width='80%' height='auto' />
                 <br/>
                 <CardHeader title="2. 다중회귀 분석 요약" />
                 <MyeongdongTable />
                 <br/>
                 <CardHeader title="3. 다중회귀 분석 결과 설명" subheader={explanation} />
+                <br/>
             </Box>
         </Card>
     )

@@ -23,7 +23,7 @@ export default function KoreaAudienceTable() {
             <td>신규 확진자 수</td>
             <td>57.9101</td>
             <td>2.432</td>
-            <td>0.000</td>
+            <td>0.015</td>
             </tr>
         </tbody>
         <tbody bgcolor='#ffc107'>

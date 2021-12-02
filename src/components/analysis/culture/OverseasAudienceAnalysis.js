@@ -16,6 +16,7 @@ export default function OverseasAudienceAnalysis() {
                 <OverseasAudienceTable />
                 <br/>
                 <CardHeader title="3. 다중회귀 분석 결과 설명" subheader={explanation} />
+                <br/>
             </Box>
         </Card>
     )
