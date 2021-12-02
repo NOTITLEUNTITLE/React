@@ -27,12 +27,16 @@ section {
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('back.jpg');
   background-size: cover;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  align-items: center;
 }
 
 .secondpage123 {
   /* background: rgb(211, 79, 79); */
   background-color: white;
   padding: 8px 12px 12px 8px;
+  background-size: cover;
+  align-items: center;
+  color: black;
 }
 
 .test {
@@ -60,4 +64,24 @@ section {
 
 .fff {
   font-size: 40px;
+}
+
+.scr {
+  display: block;
+  margin-top: 90vh;
+} 
+
+.centertext {
+  text-align: center;
+  position: absolute; 
+}
+
+.secondtext {
+  margin-top: 500px;
+  /* margin-bottom: 10vh; */
+  /* position: absolute; */
+  text-align: center;
+  /* text-align-last: auto; */
+  
+
 }
