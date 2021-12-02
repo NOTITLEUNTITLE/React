@@ -65,8 +65,8 @@ const SearchChart = () => {
     },
     annotations: {
       xaxis: [{
-        x: "200303",
-        x2: "210303",
+        x: "200119",
+        x2: "211030",
         borderColor: '#999',
         yAxisIndex: 0,
         fillColor: '#B3F7CA',

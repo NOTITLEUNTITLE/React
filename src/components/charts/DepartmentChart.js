@@ -58,8 +58,8 @@ const DepartmentChart = () => {
     },
     annotations: {
       xaxis: [{
-        x: "200303",
-        x2: "210303",
+        x: "200131",
+        x2: "210831",
         borderColor: '#999',
         yAxisIndex: 0,
         fillColor: '#B3F7CA',

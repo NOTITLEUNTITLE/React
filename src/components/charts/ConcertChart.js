@@ -99,7 +99,7 @@ const ConcertChart = () => {
       ]
     },
     {
-      name: 'opening_num',
+      name: 'showing_num',
       data: [
         8718,
         10527,
@@ -197,8 +197,8 @@ const ConcertChart = () => {
     },
     annotations: {
       xaxis: [{
-        x: "200303",
-        x2: "210303",
+        x: "2001",
+        x2: "2106",
         borderColor: '#999',
         yAxisIndex: 0,
         fillColor: '#B3F7CA',

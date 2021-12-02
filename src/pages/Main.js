@@ -1,5 +1,5 @@
 // material
-import { Box, Grid, Container, Typography, Link } from '@mui/material';
+import { Box, Grid, Container, Typography } from '@mui/material';
 // components
 import Page from '../components/Page';
 import {
@@ -11,7 +11,7 @@ import {
 } from '../components/_dashboard/app';
 
 import { BlogPostCard } from '../components/_dashboard/blog'
-import { Link as RouterLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import styles from "./Main.module.css";
 import Cards from "./Cards"
@@ -31,12 +31,12 @@ export default function DashboardApp() {
       <div className={styles.container}>
         <section className={styles.firstpage123}>
           <div className={styles.img}>
-            <h1>First Page</h1>
+            <h1 className={styles.fff}>First Page</h1>
             <h1>Last Project</h1>
           </div>
         </section>
         
-        <section className={styles.secondpage123}>
+        {/* <section className={styles.secondpage123}>
           <RouterLink to="/dashboard/transportation">
             <button className={styles.button}>교통</button>
           </RouterLink>
@@ -49,7 +49,7 @@ export default function DashboardApp() {
           <RouterLink to="/dashboard/living">
             <button className={styles.button}>생활</button>
           </RouterLink>
-        </section>
+        </section> */}
 
 
         {/* <section className={styles.secondpage123}>
@@ -58,31 +58,31 @@ export default function DashboardApp() {
           </RouterLink>
         </section> */}
       
-      {/* <section className={styles.test}>
+      <section className={styles.test}>
         <Grid container spacing={10}>
           <Grid item xs={12} sm={6} md={3}>
-            <RouterLink to='/dashboard/transportation'>
+            <Link to='/dashboard/transportation' style={{ textDecoration: 'none' }}>
                 <AppWeeklySales />
-            </RouterLink>
+            </Link>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <RouterLink to='/dashboard/culture'>
+            <Link to='/dashboard/culture' style={{ textDecoration: 'none' }}>
               <AppNewUsers />
-            </RouterLink>
+            </Link>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <RouterLink to='/dashboard/consumption'>
+            <Link to='/dashboard/consumption' style={{ textDecoration: 'none' }}>
               <AppItemOrders />
-            </RouterLink>
+            </Link>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <RouterLink to='/dashboard/living'>
+            <Link to='/dashboard/living' style={{ textDecoration: 'none' }}>
               <AppBugReports />
-            </RouterLink>
+            </Link>
           </Grid>
           
         </Grid>
-      </section> */}
+      </section>
 
 
     </div>

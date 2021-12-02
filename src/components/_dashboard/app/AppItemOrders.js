@@ -46,7 +46,7 @@ export default function AppItemOrders() {
       </IconWrapperStyle>
       <Typography variant="h3">소비</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        온/오프라인 매출, 패션/잡화
+        유통업체별 변화 
       </Typography>
     </RootStyle>
   );

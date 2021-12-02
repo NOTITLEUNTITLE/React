@@ -45,8 +45,8 @@ export default function AppWeeklySales() {
         <Bus width={30} height={30} />
         {/* <Icon icon={<Bus />} width={24} height={24} /> */}
       </IconWrapperStyle>
-      <Typography variant="h3">교통</Typography>
-      <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
+      <Typography variant="h3" textDecoration="none" >교통</Typography>
+      <Typography variant="subtitle2" underline="none" sx={{ opacity: 0.72 }}>
         서울 지하철
       </Typography>
     </RootStyle>
