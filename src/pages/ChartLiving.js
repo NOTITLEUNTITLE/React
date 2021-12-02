@@ -17,19 +17,19 @@ export default function DashboardApp() {
           </Typography>
         </Stack>
           <LivingChartBtn />
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
         </Grid>
-        <Grid item xs={12} md={6} lg={8} style={{textAlign:'right'}}>
+        <Grid style={{textAlign:'right'}}>
           <Typography gutterBottom>
             출처: 네이버데이터랩(<a href="https://datalab.naver.com/" style={{textDecoration:'none'}}>https://datalab.naver.com/</a>)
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
           <LivingAnalysisBtn />
         </Grid>
         <br/>
-        <Grid item xs={12} md={6} lg={8}>
-          <Card sx={{width: 1400}}>
+        <Grid>
+          <Card>
             <CardHeader title="생활 데이터 최종 분석 인사이트" subheader="생활 데이터 분석을 통해 도출한 인사이트입니다." />
             <br/>
             <CardContent>

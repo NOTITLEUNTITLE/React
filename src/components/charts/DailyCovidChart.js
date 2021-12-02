@@ -112,7 +112,7 @@ function DailyCovidChart() {
       <br />
       <h2>COVID-19 Korea Graphs</h2>
       <br />
-      <Chart options={options} series={series} type="line" width={1000} height={600} />
+      <Chart options={options} series={series} type="line" width={'100%'} height={600} />
       {/* <Chart options={options} series={series1} type="line" width={1000} height={600} /> */}
     </div>
     

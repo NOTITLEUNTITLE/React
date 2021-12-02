@@ -17,14 +17,14 @@ export default function DashboardApp() {
           </Typography>
         </Stack>
           <CultureChartBtn />
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
         </Grid>
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
           <CultureAnalysisBtn />
         </Grid>
         <br/>
-        <Grid item xs={12} md={6} lg={8}>
-          <Card sx={{width: 1400}}>
+        <Grid>
+          <Card>
             <CardHeader title="문화 데이터 최종 분석 인사이트" subheader="문화 데이터 분석을 통해 도출한 인사이트입니다." />
             <br/>
             <CardContent>

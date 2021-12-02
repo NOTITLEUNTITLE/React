@@ -16,7 +16,7 @@ function CultureChartBtn() {
         <Tab eventKey="movie" title="영화">
           <br/>
           <MovieChart />
-          <Grid item xs={12} md={6} lg={8} style={{textAlign:'right'}}>
+          <Grid style={{textAlign:'right'}}>
             <Typography gutterBottom>
               출처: 영화관입장권통합전산망(<a href="https://www.kobis.or.kr/kobis/business/main/main.do" style={{textDecoration:'none'}}>https://www.kobis.or.kr/kobis/business/main/main.do</a>)
             </Typography>
@@ -25,7 +25,7 @@ function CultureChartBtn() {
         <Tab eventKey="concert" title="공연">
           <br/>
           <ConcertChart />
-          <Grid item xs={12} md={6} lg={8} style={{textAlign:'right'}}>
+          <Grid style={{textAlign:'right'}}>
             <Typography gutterBottom>
               출처: 공연예술통합전산망(<a href="https://www.kopis.or.kr/por/main/main.do" style={{textDecoration:'none'}}>https://www.kopis.or.kr/por/main/main.do</a>)
             </Typography>
