@@ -19,6 +19,11 @@ export default function DashboardApp() {
           <LivingChartBtn />
         <Grid item xs={12} md={6} lg={8}>
         </Grid>
+        <Grid style={{textAlign:'right', marginRight:'10%'}}>
+          <Typography gutterBottom>
+            출처: 네이버데이터랩(<a href="https://datalab.naver.com/" style={{textDecoration:'none'}}>https://datalab.naver.com/</a>)
+          </Typography>
+        </Grid>
         <Grid item xs={12} md={6} lg={8}>
           <LivingAnalysisBtn />
         </Grid>
