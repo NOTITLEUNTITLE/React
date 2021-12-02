@@ -17,22 +17,22 @@ export default function DashboardApp() {
           </Typography>
         </Stack>
           <TransportationChartBtn />
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
         </Grid>
-        <Grid item xs={12} md={6} lg={8} style={{textAlign:'right'}}>
+        <Grid style={{textAlign:'right'}}>
           <Typography gutterBottom>
             출처: 서울열린데이터광장(<a href="https://data.seoul.go.kr/index.do" style={{textDecoration:'none'}}>https://data.seoul.go.kr/index.do</a>)
           </Typography>
         </Grid>
         {/* <p className={s.source} >출처: 서울열린데이터광장
         <a href="https://data.seoul.go.kr/index.do" className={s.source1}>https://data.seoul.go.kr/index.do</a></p> */}
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
           <TransportationAnalysisBtn />
         </Grid>
         <br/>
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
           
-          <Card sx={{width: 1400}}>
+          <Card>
             <CardHeader title="교통 데이터 최종 분석 인사이트" subheader="교통 데이터 분석을 통해 도출한 인사이트입니다." />
             <br/>
             <CardContent>

@@ -17,19 +17,19 @@ export default function DashboardApp() {
           </Typography>
         </Stack>
           <ConsumptionChartBtn />
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
         </Grid>
-        <Grid item xs={12} md={6} lg={8} style={{textAlign:'right'}}>
+        <Grid style={{textAlign:'right'}}>
           <Typography gutterBottom>
             출처: 공공데이터포털(<a href="https://www.data.go.kr/" style={{textDecoration:'none'}}>https://www.data.go.kr/</a>)
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6} lg={8}>
+        <Grid>
           <ConsumptionAnalysisBtn />
         </Grid>
         <br/>
-        <Grid item xs={12} md={6} lg={8}>
-          <Card sx={{width: 1400}}>
+        <Grid>
+          <Card>
             <CardHeader title="소비 데이터 최종 분석 인사이트" subheader="소비 데이터 분석을 통해 도출한 인사이트입니다." />
             <br/>
             <CardContent>
