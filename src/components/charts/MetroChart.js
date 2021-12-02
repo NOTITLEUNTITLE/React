@@ -4,8 +4,14 @@ import axios from 'axios';
 
 const MetroChart = () => {
   let y = [];
-  let x = [""];
-  
+  let x = [];
+  let year = [];
+  let month = [];
+  let day = [];
+  let temp = [];
+  let acc = 0;
+  let temp1 = [''];
+
   const chart = () => {
     axios
       .get("http://15.164.225.133:5000/metro")
@@ -13,12 +19,24 @@ const MetroChart = () => {
         if(res.status === 200){
           console.log("지하철 데이터 가져왔다.")
           for(const dataobj of res.data){
-            // var temp = dataobj.get_on;
-            // var temp1 = dataobj.get_off;
-            // y.push(Number(temp - temp1));
             y.push((dataobj.get_on));
-            x.push((dataobj.date_day));
+            x.push(String(dataobj.date_day));
+            year.push(dataobj.date_day.substring(0,2))
+            month.push(dataobj.date_day.substring(2,4))
+            day.push(dataobj.date_day.substring(4,6))
           }
+          for(var i=1; i<year.length; i++){
+            if(month[i] === month[i-1]){
+              acc = acc + Number(y[i])
+            }
+            else{
+              temp1.push(String(year[i])+String(month[i-1]));
+              temp.push(acc);
+              acc = 0;
+            }
+          }
+          console.log("month data", temp);
+          console.log("month",temp1)
         }else{
           console.log("지하철 데이터 못 가져왔다.")
         }
@@ -26,7 +44,8 @@ const MetroChart = () => {
       .catch(err => {
         console.log(err)
       });
-    console.log(x,y)
+    console.log(x,y);
+    console.log(year,month,day);
   }
 
   useEffect(() => {
@@ -42,8 +61,8 @@ const MetroChart = () => {
     },
     annotations: {
       xaxis: [{
-        x: "200119",
-        x2: "211030",
+        x: "2001",
+        x2: "2108",
         borderColor: '#999',
         yAxisIndex: 0,
         fillColor: '#B3F7CA',
@@ -95,9 +114,9 @@ const MetroChart = () => {
       },
       // labels: [1,2,3,4],
       type: "category",
-      categories: x,
+      categories: temp1,
       title: {
-        text: "YYMMDD",
+        text: "YYMM",
         style:{
           fontSize: '24',
           color: '#000'
@@ -122,7 +141,7 @@ const MetroChart = () => {
   })
   const [series, setseries] = useState([{
     name: '일일 지하철 탑승객',
-    data: y,
+    data: temp,
     color: "#0c2925",
   }])
 

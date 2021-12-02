@@ -15,14 +15,40 @@ const SearchChart = () => {
   let y10 = [];
   let y11 = [];
   let y12 = [];
-  let x = [""];
-
+  let year = [];
+  let month = [];
+  let day = [];
+  let temp = [''];
+  let temp1 = [];
+  let temp2 = [];
+  let temp3 = [];
+  let temp4 = [];
+  let temp5 = [];
+  let temp6 = [];
+  let temp7 = [];
+  let temp8 = [];
+  let temp9 = [];
+  let temp10 = [];
+  let temp11 = [];
+  let temp12 = [];
+  let acc1 = 0;
+  let acc2 = 0;
+  let acc3 = 0;
+  let acc4 = 0;
+  let acc5 = 0;
+  let acc6 = 0;
+  let acc7 = 0;
+  let acc8 = 0;
+  let acc9 = 0;
+  let acc10 = 0;
+  let acc11 = 0;
+  let acc12 = 0;
   const chart = () => {
     axios
-      .get("http://15.164.225.133:5000/naver_data ")
+      .get("http://15.164.225.133:5000/naver_data")
       .then(res => {
         if(res.status === 200){
-          console.log(res)
+          console.log("생활 데이터 가져왔다.")
           for(const dataobj of res.data){
             y1.push(parseFloat(dataobj.amenity));
             y2.push(parseFloat(dataobj.beauty));
@@ -36,19 +62,75 @@ const SearchChart = () => {
             y10.push(parseFloat(dataobj.home_appliance));
             y11.push(parseFloat(dataobj.living_health));
             y12.push(parseFloat(dataobj.sport_leisure));
-            x.push((dataobj.date_day));
+            year.push(dataobj.date_day.substring(0,2))
+            month.push(dataobj.date_day.substring(2,4))
+            day.push(dataobj.date_day.substring(4,6))
           }
+          for(var i=1; i<year.length; i++){
+            if(month[i] === month[i-1]){
+              acc1 = acc1 + Number(y1[i])
+              acc2 = acc2 + Number(y2[i])
+              acc3 = acc3 + Number(y3[i])
+              acc4 = acc4 + Number(y4[i])
+              acc5 = acc5 + Number(y5[i])
+              acc6 = acc6 + Number(y5[i])
+              acc7 = acc7 + Number(y5[i])
+              acc8 = acc8 + Number(y5[i])
+              acc9 = acc9 + Number(y5[i])
+              acc10 = acc10 + Number(y5[i])
+              acc11 = acc11 + Number(y5[i])
+              acc12 = acc12 + Number(y5[i])
+            }
+            else{
+              temp.push(String(year[i])+String(month[i-1]));
+              temp1.push(Math.round(acc1 * 100) / 100);
+              temp2.push(Math.round(acc2 * 100) / 100);
+              temp3.push(Math.round(acc3 * 100) / 100);
+              temp4.push(Math.round(acc4 * 100) / 100);
+              temp5.push(Math.round(acc5 * 100) / 100);
+              temp6.push(Math.round(acc6 * 100) / 100);
+              temp7.push(Math.round(acc7 * 100) / 100);
+              temp8.push(Math.round(acc8 * 100) / 100);
+              temp9.push(Math.round(acc9 * 100) / 100);
+              temp10.push(Math.round(acc10 * 100) / 100);
+              temp11.push(Math.round(acc11 * 100) / 100);
+              temp12.push(Math.round(acc12 * 100) / 100);
+              // temp2.push(acc2);
+              // temp3.push(acc3);
+              // temp4.push(acc4);
+              // temp5.push(acc5);
+              // temp6.push(acc5);
+              // temp7.push(acc5);
+              // temp8.push(acc5);
+              // temp9.push(acc5);
+              // temp10.push(acc5);
+              // temp11.push(acc5);
+              // temp12.push(acc5);
+              acc1 = 0;
+              acc2 = 0;
+              acc3 = 0;
+              acc4 = 0;
+              acc5 = 0;
+              acc6 = 0;
+              acc7 = 0;
+              acc8 = 0;
+              acc9 = 0;
+              acc10 = 0;
+              acc11 = 0;
+              acc12 = 0;
+            }
+          }
+          console.log("month data", temp);
+          console.log("month",temp1)
         }else{
-          console.log("no data");
+          console.log("생활 데이터 못 가져왔다.")
         }
-        
       })
       .catch(err => {
         console.log(err)
       });
-    console.log('x',x)
-    
-
+    // console.log(x,y);
+    console.log(year,month,day);
   }
 
   
@@ -65,8 +147,8 @@ const SearchChart = () => {
     },
     annotations: {
       xaxis: [{
-        x: "200119",
-        x2: "211030",
+        x: "2001",
+        x2: "2108",
         borderColor: '#999',
         yAxisIndex: 0,
         fillColor: '#B3F7CA',
@@ -118,9 +200,9 @@ const SearchChart = () => {
       },
       // labels: [1,2,3,4],
       type: "category",
-      categories: x,
+      categories: temp,
       title: {
-        text: "YYMMDD",
+        text: "YYMM",
         style:{
           fontSize: '24',
           color: '#000'
@@ -143,52 +225,51 @@ const SearchChart = () => {
   const [series, setseries] = useState([
     {
       name: 'amenity',
-      data: y1
+      data: temp1
     },
     {
       name: 'beauty',
-      data: y2
+      data: temp2
     },
     {
       name: 'book',
-      data: y3
+      data: temp3
     },
     {
       name: 'childbirth',
-      data: y4
+      data: temp4
     },
     {
       name: 'duty_free',
-      data: y5,
-      type: 'column',
+      data: temp5,
     },
     {
       name: 'fashion_accessories',
-      data: y6
+      data: temp6
     },
     {
       name: 'fashion_clothes',
-      data: y7
+      data: temp7
     },
     {
       name: 'food',
-      data: y8
+      data: temp8
     },
     {
       name: 'furniture',
-      data: y9
+      data: temp9
     },
     {
       name: 'home_appliance',
-      data: y10
+      data: temp10
     },
     {
       name: 'living_health',
-      data: y11
+      data: temp11
     },
     {
       name: 'sport_leisure',
-      data: y12
+      data: temp12
     },
   ])
 
